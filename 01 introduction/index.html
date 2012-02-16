@@ -151,10 +151,22 @@ employees.first.fire!
 				</section>
 				<section>
 					<h2>IRB - Ruby interactive shell</h2>
+					<section>
+						<ul>
+							<li>type in 'irb'</li>
+							<li>Code while you think</li>
+							<li>Instant feedback</li>
+							<li>Great for learning ruby</li>
+							<li>Perfect to quickly try something new</li>
+						</ul>
+					</section>
+					<section>	
+						<img src="assets/images/cat.gif" />
+					</section>
 				</section>
 				<section>
+					<h2>Strings</h2>
 					<section>
-						<h2>Strings</h2>
 						<img src="assets/images/string.jpg" />
 					</section>
 					<section>
@@ -212,8 +224,8 @@ name = 'world'
 					</section>
 				</section>
 				<section>
+					<h2>Numbers</h2>
 					<section>
-						<h2>Numbers</h2>
 						<img src="assets/images/numbers.jpg" />
 					</section>
 					<section>
@@ -242,6 +254,15 @@ name = 'world'
 12/5.0
 # => 2.4 
 
+1/0
+# ZeroDivisionError: divided by 0
+
+1/0.0
+# => Infinity 
+
+0/1
+# => 0 
+
 2 ** 8
 # => 256 
 
@@ -268,11 +289,88 @@ name = 'world'
 				</section>
 				<section>
 					<h2>Conditionals</h2>
+					<section>
+						<img src="assets/images/conditionals.png" />
+					</section>
+					<section>
+						<pre><code contenteditable>
+name = "The Boss"
+
+if name == "The Boss"
+	puts "Hello, Boss"
+end
+# => Hello, Boss
+
+puts "Hello, Boss" if name == "The Boss"
+# => "Hello, Boss"
+
+true ? "Yes" : "No"
+# => "Yes"
+
+unless name == "The Boss"
+	puts "Who are you?"
+end
+# => nil
+
+puts "Who are you?" unless name == "Neo"
+# same as
+puts "Who are you? if name != 'Neo"
+# => Who are you?
+
+if name == "The Boss"
+  puts "Hi boss"
+elsif name == "Nemo"
+	puts "I found you!"
+else
+	puts "Who are you?"
+end
+
+fruit = "apple"
+case fruit
+	when "apple"
+		"An Apple a day"
+	when "orange"
+		"O-o-O-o-Oros"
+	else
+		"Meat?"
+end
+ => "An Apple a day" 
+
+guess = 5
+
+case
+  when guess < 5 
+    "too low"
+  when guess > 5
+    "too high"
+  else
+    "You got me"
+  end
+# => "You got me" 
+
+input = ""
+while(input == "" || input.downcase != "exit")
+  puts "Say Something"
+  input = gets.chomp
+	puts "I can say #{input} too"
+end
+# => Say Something
+# hi
+# I can say hi too
+# Say Something
+# something else
+# I can say something else too
+# Say Something
+# Exit
+# I can say Exit too
+
+						</code></pre>						
+					</section>
 				</section>
 				
 				<section>
+					<h2>Arrays</h2>
 					<section>
-						<h2>Arrays</h2>
 						<img src="assets/images/array.gif" />
 					</section>
 					<section>
@@ -329,14 +427,18 @@ list.join(" and ")
 # => "happiness and love and war and beer and unicorns"
 						</pre></code>
 					</section>
-					
 				</section>
 				<section>
 					<h2>Hashes</h2>
+					<section>
+						<img src="assets/images/hash.jpg" />
+					</section>
 				</section>
 				<section>
 					<h2>Objects</h2>
-					<img src="assets/images/ManyObjects.gif" />
+					<section>
+						<img src="assets/images/objects.jpg" />
+					</section>
 				</section>
 				<section>
 					<section>
