@@ -73,6 +73,28 @@
               <li>interpreted</li>
             </ul>
           </section>
+
+          <section>
+            <img src="assets/images/unicorn.png" />
+          </section>
+
+          <section>
+            <h2>Ruby overview</h2>
+            <pre><code contenteditable>
+guy = Employee.new('Peter Blue')
+other_guy = Employee.new('Camel Smith') 
+
+employee.greet(other_guy)
+
+employees = [guy, other_guy]
+
+employees.each do |employee|
+  puts "#{employee.employee_number} - #{employee.name}"
+end
+
+employees.first.fire!
+            </code></pre>
+          </section>
           <section>
             <h2>Ruby overview</h2>
             <pre><code contenteditable>
@@ -113,6 +135,11 @@ class Employee
   def employed?
     !fired?
   end
+        </code></pre>
+      </section>
+      <section>
+        <h2>Ruby overview</h2>
+          <pre><code contenteditable>
 
   def greet(other_employee)
     if other_employee.boss?
@@ -128,26 +155,11 @@ class Employee
     @employ_number = @@numbers
   end
 end
-
-guy = Employee.new('Peter Blue')
-other_guy = Employee.new('Camel Smith') 
-
-employee.greet(other_guy)
-
-employees = [guy, other_guy]
-
-employees.each do |employee|
-  puts "#{employee.employee_number} - #{employee.name}"
-end
-
-employees.first.fire!
             </code></pre>
+
           </section>
 
-          <section>
-            <img src="assets/images/unicorn.png" />
-            
-          </section>
+
 
         </section>
         <section>
@@ -196,7 +208,10 @@ name = 'world'
 
 'tEEny bOb TyPing'.downcase
  # => "teeny bob typing" 
-
+            </pre></code>
+          </section>
+          <section>
+            <pre><code contenteditable>
 'a'.next
  # => "b" 
 
@@ -220,8 +235,7 @@ name = 'world'
 
 'Qualica complexity made simple'.scan(/\s(s\w+)/)
  # => [["simple"]]
-
-            </pre></code>
+            </code></pre>
           </section>
         </section>
         <section>
@@ -255,6 +269,11 @@ name = 'world'
 12/5.0
 # => 2.4 
 
+
+            </pre></code>
+          </section>
+          <section>
+            <pre><code contenteditable>
 1/0
 # ZeroDivisionError: divided by 0
 
@@ -285,7 +304,7 @@ name = 'world'
 #   3
 #   4
 #   5
-            </pre></code>
+            </code></pre>
           </section>
         </section>
         <section>
@@ -326,6 +345,10 @@ else
   puts "Who are you?"
 end
 
+            </code></pre>           
+          </section>
+           <section>
+            <pre><code contenteditable>
 fruit = "apple"
 case fruit
   when "apple"
@@ -364,8 +387,7 @@ end
 # Say Something
 # Exit
 # I can say Exit too
-
-            </code></pre>           
+            </code></pre>
           </section>
         </section>
         <section>
@@ -408,6 +430,11 @@ list.push "unicorns"
 list.count
 # => 5 
 
+
+            </pre></code>
+          </section>
+          <section>
+            <pre><code contenteditable>
 # Accessing elements in an array
 list[0]
 # => "happiness" 
@@ -432,7 +459,7 @@ list.map { |list_item| "#{list_item} on your mom" }
 
 list.join(" and ")
 # => "happiness and love and war and beer and unicorns"
-            </pre></code>
+            </code></pre>
           </section>
         </section>
         <section>
@@ -482,7 +509,10 @@ puts h["twitter.com"]
 
 puts h[:level]
 # => 20
-
+            </code></pre>
+          </section>
+          <section>
+            <pre><code contenteditable>
 h.each do |key, value|
   puts "#{key} contains #{value}"
 end
@@ -517,8 +547,21 @@ h1.merge!(h2) { |key, v1, v2| v1 }
           <section>
             <h2>Implementing</h2>
             <h1>TicTacToe</h1>
-            <img src="assets/images/deal_with_it.jpg" />
+           
           </section>
+        </section>
+        <section>
+          <h2>Next up</h2>
+          <ul>
+            <li>Blocks</li>
+            <li>Exceptions</li>
+            <li>Testing</li>
+            <li>Regular expressions</li>
+            <li>I/O, Files</li>
+          </ul>
+        </section>
+        <section>
+          <img src="assets/images/deal_with_it.jpg" />
         </section>
         <section>
           <img src="assets/images/later_bitch.jpg" />
