@@ -1,73 +1,91 @@
-class Block
-	attr_accessor :y
-	attr_accessor :x
-	attr_accessor :status
-	
-	def initialize(opts = {})
-		@y = opts[:y]
-		@x = opts[:x]
+class Square
+	attr_reader :x
+	attr_reader :y
+
+	def initialize(x, y, player=nil)
+		@x, @y, @player  = x, y, player
 	end
 
 	def display
-		output = " #{status_display} "
-		output += "|" unless @x == 2
+		output = ""
+    output += y.to_s if @x == 0
+		output += " #{player_symbol} "
+		output += if @x == Board::WIDTH - 1
+							  "\n"
+							else
+						    "|"
+							end
+
 		output
 	end
 
-	def status_display
-		@status.nil? ?	" " : "X"
+	def player=(player)
+		@player = player
+	end
+
+	def player_symbol
+		@player.nil? ? " " : @player.symbol
+	end
+end
+
+class Player
+	attr_accessor :symbol
+
+	def initialize(board, symbol)
+		@board = board
+		@symbol = symbol
+	end
+
+	def pick(x,y)
+	  @board.pick(x.to_i,y.to_i, self)
 	end
 end
 
 class Board
+	WIDTH = 3
+	HEIGHT = 3
+
+	attr_accessor :grid
+
 	def initialize
-		@board = Array.new(3) { Array.new(3) }
-		0.upto(2) do |y|
-			0.upto(2) do |x|
-				@board[y][x] = Block.new(y: y, x: x)
+		@grid = Array.new(3) { Array.new(3) }				
+		0.upto(HEIGHT - 1) do |row|
+		  0.upto(WIDTH - 1) do |column|
+				@grid[row][column] = Square.new(column, row)
 			end
 		end
 	end
 
-	def display	
-		@board.each_with_index do |row, i|
-			row.each do |block|
-				print block.display
+	def pick(x,y, player)
+		@grid[y][x].player = player
+	end
+
+	def display
+		puts "  0   1   2    X"
+		@grid.each_with_index do |row, row_index|
+			row.each do |column|
+				print column.display
 			end
-			puts
-			unless i == 2
-				print " "
-				(3*3).times { print "-"}
-				puts
-			end
+			puts "  -----------" unless row_index == HEIGHT - 1
 		end
-		puts
-	end
-
-	def tick(x,y)
-		@board[y.to_i][x.to_i].status = "taken"
-	end
-end
-			
-class Player
-end
-
-class AIPlayer
-end
-
-class TicTacToe
-	def run
-		board = Board.new
-		board.display
-		while true
-			puts "Put in x co ordinate"
-			x = gets
-			puts "Put in y co ordinate"
-			y = gets
-			board.tick(x,y)
-			board.display
-		end
+		puts "\nY\n"
 	end
 end
 
-TicTacToe.new.run
+board = Board.new
+players = [Player.new(board, 'X'), Player.new(board, 'O')]
+
+current_player_index = (rand() * players.length).to_i
+while true do
+	current_player = players[current_player_index]
+	system("clear")
+  board.display
+  puts "Player #{current_player.symbol}"
+  print "X(0-2): "
+	x = gets
+	print "Y(0-2): "
+	y = gets
+  current_player.pick(x, y)
+  current_player_index = current_player_index == 0 ? 1 : 0 
+end
+
