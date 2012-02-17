@@ -146,6 +146,12 @@ html {
 	margin: 0 auto;
 }
 
+#reveal li ul {
+	margin-left: 20px;
+	font-size: 18px;
+	line-height: 20px;
+}
+
 #reveal ol {
 	list-style: decimal;
 	list-style-position: inside;
