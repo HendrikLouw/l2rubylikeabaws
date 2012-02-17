@@ -72,10 +72,6 @@ class Board
 	end
 end
 
-def check_for_winner(board)
-	raise board.grid[0][0].player_symbol if board.grid[0][0] == board.grid[0][1] && board.grid[0][1] == board.grid[0][2] 
-end
-
 board = Board.new
 players = [Player.new(board, 'X'), Player.new(board, 'O')]
 
@@ -87,6 +83,5 @@ while true do
 	y = gets
   players[current_player_index].pick(x, y)
   current_player_index = current_player_index == 0 ? 1 : 0 
-	check_for_winner(board)
 end
 

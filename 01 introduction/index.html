@@ -1,132 +1,132 @@
 <!doctype html>  
 <html lang="en">
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title>L2Ruby like a baws</title>
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>L2Ruby like a baws</title>
 
-		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
-		<meta name="author" content="Hendrik Louw">
-		
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/main.css">
+    <meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+    <meta name="author" content="Hendrik Louw">
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
 
-		<link rel="stylesheet" href="lib/zenburn.css">
-	</head>
-	
-	<body>
-		
-		<div id="reveal">
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<img src="assets/images/ruby_like_a_baws.jpg" />
-				</section>
-				<section>
-					
-					<img src='assets/images/rock_star.jpg' />
-					<h3 class="inverted">Part one: The rockstar pose.</h3>
-				</section>
-				
-				<section>
-					<h2>Overview</h2>
-					<ul>
-						<li>History of Ruby (The good old days)</li>
-						<li>Ruby overview</li>
-						<li>IRB</li>
-						<li>Strings (Words aka how to alphabet)</li>
-						<li>Numbers (1 + 1 = 2 )</li>
-						<li>Conditionals (1 + 1 == 2) </li>
-						<li>Arrays (Hold this list for me)</li>
-						<li>Hashes (Fancy list)</li>
-						<li>Objects (stuff, things, etc)</li>
-						<li>Putting it all together</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Yukihiro Matsumoto</h2>
-					<section>
-						<img src="assets/images/Yukihiro_Matsumoto.jpg" />
-					</section>
-					<section>
-						<img src="assets/images/luke_i_am_your_father.jpeg" />
-					</section>
-					<section>
-						<blockquote>
-							Often people, especially computer engineers, focus on the machines. They think, "By doing this, the machine will run faster. By doing this, the machine will run more effectively. By doing this, the machine will something something something." They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.
-						</blockquote>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>Ruby is</h2>
-						<ul>
-							<li>created to make developers happy</li>
-							<li>beautiful</li>
-							<li>inspired by Perl, Smalltalk, Eiffel, Ada, and Lisp</li>
-							<li>dynamically typed</li>
-							<li>ojbect orientated, everything is an object</li>							
-							<li>interpreted</li>
-						</ul>
-					</section>
-					<section style="overflow:auto">
-						<h2>Ruby overview</h2>
-						<pre><code contenteditable>
+    <link rel="stylesheet" href="lib/zenburn.css">
+  </head>
+  
+  <body>
+    
+    <div id="reveal">
+      
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <img src="assets/images/ruby_like_a_baws.jpg" />
+        </section>
+        <section>
+          
+          <img src='assets/images/rock_star.jpg' />
+          <h3 class="inverted">Part one: The rockstar pose.</h3>
+        </section>
+        
+        <section>
+          <h2>Overview</h2>
+          <ul>
+            <li>History of Ruby (The good old days)</li>
+            <li>Ruby overview</li>
+            <li>IRB</li>
+            <li>Strings (Words aka how to alphabet)</li>
+            <li>Numbers (1 + 1 = 2 )</li>
+            <li>Conditionals (1 + 1 == 2) </li>
+            <li>Arrays (Hold this list for me)</li>
+            <li>Hashes (Fancy list)</li>
+            <li>Objects (stuff, things, etc)</li>
+            <li>Putting it all together</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Yukihiro Matsumoto</h2>
+          <section>
+            <img src="assets/images/Yukihiro_Matsumoto.jpg" />
+          </section>
+          <section>
+            <img src="assets/images/luke_i_am_your_father.jpeg" />
+          </section>
+          <section>
+            <blockquote>
+              Often people, especially computer engineers, focus on the machines. They think, "By doing this, the machine will run faster. By doing this, the machine will run more effectively. By doing this, the machine will something something something." They are focusing on machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines. We are the masters. They are the slaves.
+            </blockquote>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Ruby is</h2>
+            <ul>
+              <li>created to make developers happy</li>
+              <li>beautiful</li>
+              <li>inspired by Perl, Smalltalk, Eiffel, Ada, and Lisp</li>
+              <li>dynamically typed</li>
+              <li>ojbect orientated, everything is an object</li>             
+              <li>interpreted</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Ruby overview</h2>
+            <pre><code contenteditable>
 #class definition - Convention to keep class names capitalized
 class Employee
-	# class variable
-	@@numbers = 0
+  # class variable
+  @@numbers = 0
 
-	# attr_accessor helper, creates @hours_worked instance variable
-	# creates object.hours_worked= value (setter)
-	# and object.hours_worked (getter)
-	attr_accessor :hours_worked
+  # attr_accessor helper, creates @hours_worked instance variable
+  # creates object.hours_worked= value (setter)
+  # and object.hours_worked (getter)
+  attr_accessor :hours_worked
 
-	attr_accessor :employee_number
-	attr_accessor :name
-	attr_accessor :status
+  attr_accessor :employee_number
+  attr_accessor :name
+  attr_accessor :status
 
-	# constructor
-	# Call with Employee.new("myname")	
-	def initialize(name)
-		@name = name
-		@status = :employed
-		assign_employee_number
-	end
+  # constructor
+  # Call with Employee.new("myname")  
+  def initialize(name)
+    @name = name
+    @status = :employed
+    assign_employee_number
+  end
 
-	def boss?
-		@name == "The Boss"
-	end
+  def boss?
+    @name == "The Boss"
+  end
 
-	def fire!
-		@status = :fired
-	end
+  def fire!
+    @status = :fired
+  end
 
-	def fired?
-		@status == :fired
-	end
+  def fired?
+    @status == :fired
+  end
 
-	def employed?
-		!fired?
-	end
+  def employed?
+    !fired?
+  end
 
-	def greet(other_employee)
-	  if other_employee.boss?
-	    puts "I'm working"
-	  else
-	    puts "Tsup, dawg"
-	  end
-	end
+  def greet(other_employee)
+    if other_employee.boss?
+      puts "I'm working"
+    else
+      puts "Tsup, dawg"
+    end
+  end
 
-	private
-	def assign_employee_number
-		@@numbers += 1
-		@employ_number = @@numbers
-	end
+  private
+  def assign_employee_number
+    @@numbers += 1
+    @employ_number = @@numbers
+  end
 end
 
 guy = Employee.new('Peter Blue')
@@ -141,36 +141,37 @@ employees.each do |employee|
 end
 
 employees.first.fire!
-						</code></pre>
-					</section>
+            </code></pre>
+          </section>
 
-					<section>
-						<img src="assets/images/idontalways.jpg" />
-					</section>
+          <section>
+            <img src="assets/images/unicorn.png" />
+            
+          </section>
 
-				</section>
-				<section>
-					<h2>IRB - Ruby interactive shell</h2>
-					<section>
-						<ul>
-							<li>type in 'irb'</li>
-							<li>Code while you think</li>
-							<li>Instant feedback</li>
-							<li>Great for learning ruby</li>
-							<li>Perfect to quickly try something new</li>
-						</ul>
-					</section>
-					<section>	
-						<img src="assets/images/cat.gif" />
-					</section>
-				</section>
-				<section>
-					<h2>Strings</h2>
-					<section>
-						<img src="assets/images/string.jpg" />
-					</section>
-					<section>
-						<pre><code contenteditable>
+        </section>
+        <section>
+          <h2>IRB - Ruby interactive shell</h2>
+          <section>
+            <ul>
+              <li>type in 'irb'</li>
+              <li>Code while you think</li>
+              <li>Instant feedback</li>
+              <li>Great for learning ruby</li>
+              <li>Perfect to quickly try something new</li>
+            </ul>
+          </section>
+          <section> 
+            <img src="assets/images/cat.gif" />
+          </section>
+        </section>
+        <section>
+          <h2>Strings</h2>
+          <section>
+            <img src="assets/images/string.jpg" />
+          </section>
+          <section>
+            <pre><code contenteditable>
 'Hello world'
 # => 'Hello world'
  
@@ -220,16 +221,16 @@ name = 'world'
 'Qualica complexity made simple'.scan(/\s(s\w+)/)
  # => [["simple"]]
 
-						</pre></code>
-					</section>
-				</section>
-				<section>
-					<h2>Numbers</h2>
-					<section>
-						<img src="assets/images/numbers.jpg" />
-					</section>
-					<section>
-						<pre><code contenteditable>
+            </pre></code>
+          </section>
+        </section>
+        <section>
+          <h2>Numbers</h2>
+          <section>
+            <img src="assets/images/numbers.jpg" />
+          </section>
+          <section>
+            <pre><code contenteditable>
 1.class
 # => Fixnum 
 
@@ -284,20 +285,20 @@ name = 'world'
 #   3
 #   4
 #   5
-						</pre></code>
-					</section>
-				</section>
-				<section>
-					<h2>Conditionals</h2>
-					<section>
-						<img src="assets/images/conditionals.png" />
-					</section>
-					<section>
-						<pre><code contenteditable>
+            </pre></code>
+          </section>
+        </section>
+        <section>
+          <h2>Conditionals</h2>
+          <section>
+            <img src="assets/images/conditionals.png" />
+          </section>
+          <section>
+            <pre><code contenteditable>
 name = "The Boss"
 
 if name == "The Boss"
-	puts "Hello, Boss"
+  puts "Hello, Boss"
 end
 # => Hello, Boss
 
@@ -308,7 +309,7 @@ true ? "Yes" : "No"
 # => "Yes"
 
 unless name == "The Boss"
-	puts "Who are you?"
+  puts "Who are you?"
 end
 # => nil
 
@@ -320,19 +321,19 @@ puts "Who are you? if name != 'Neo"
 if name == "The Boss"
   puts "Hi boss"
 elsif name == "Nemo"
-	puts "I found you!"
+  puts "I found you!"
 else
-	puts "Who are you?"
+  puts "Who are you?"
 end
 
 fruit = "apple"
 case fruit
-	when "apple"
-		"An Apple a day"
-	when "orange"
-		"O-o-O-o-Oros"
-	else
-		"Meat?"
+  when "apple"
+    "An Apple a day"
+  when "orange"
+    "O-o-O-o-Oros"
+  else
+    "Meat?"
 end
  => "An Apple a day" 
 
@@ -352,7 +353,7 @@ input = ""
 while(input == "" || input.downcase != "exit")
   puts "Say Something"
   input = gets.chomp
-	puts "I can say #{input} too"
+  puts "I can say #{input} too"
 end
 # => Say Something
 # hi
@@ -364,17 +365,19 @@ end
 # Exit
 # I can say Exit too
 
-						</code></pre>						
-					</section>
-				</section>
-				
-				<section>
-					<h2>Arrays</h2>
-					<section>
-						<img src="assets/images/array.gif" />
-					</section>
-					<section>
-						<pre><code contenteditable>
+            </code></pre>           
+          </section>
+        </section>
+        <section>
+          <img src="assets/images/idontalways.jpg" />
+        </section>
+        <section>
+          <h2>Arrays</h2>
+          <section>
+            <img src="assets/images/array.gif" />
+          </section>
+          <section>
+            <pre><code contenteditable>
 new_list = Array.new(5)
 # => [nil, nil, nil, nil, nil] 
 
@@ -412,6 +415,10 @@ list[0..2]
 # => ["happiness", "love", "war"] 
 
 
+# Is an element in an array
+list.include? "happiness"
+# => true 
+
 # Cool array methods
 list.each { |list_item| puts "Daddy likes #{list_item}" }
 # =>     Daddy likes happiness
@@ -425,86 +432,146 @@ list.map { |list_item| "#{list_item} on your mom" }
 
 list.join(" and ")
 # => "happiness and love and war and beer and unicorns"
-						</pre></code>
-					</section>
-				</section>
-				<section>
-					<h2>Hashes</h2>
-					<section>
-						<img src="assets/images/hash.jpg" />
-					</section>
-				</section>
-				<section>
-					<h2>Objects</h2>
-					<section>
-						<img src="assets/images/objects.jpg" />
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>Putting it all together</h2>
-						<h3>...</h3>
-						<h2>...</h2>
-						<h1>...</h1>
-					</section>
-					<section>
-						<h2>Implementing</h2>
-						<h1>TicTacToe</h1>
-						<img src="assets/images/deal_with_it.jpg" />
-					</section>
-				</section>
-				<section>
-					<img src="assets/images/later_bitch.jpg" />
-				</section>
-			</div>
+            </pre></code>
+          </section>
+        </section>
+        <section>
+          <h2>Hashes</h2>
+          <section>
+            <img src="assets/images/hash.jpg" />
+          </section>
+          <section>
+            <pre><code contenteditable>
+h = Hash.new
+# => {}
 
-			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
+h = {}
+# => {} 
 
-			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-			<div class="progress"><span></span></div>
-			
-		</div>
-		
-		<script src="js/reveal.js"></script>
-		<script src="lib/highlight.js"></script>
-		<script>
-			// Parse the query string into a key/value object
-			var query = {};
-			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-			} );
+h = {}
+h[:a]
+# => nil 
 
-			Reveal.initialize({
-				// Display controls in the bottom right corner
-				controls: true,
+h = Hash.new("NO NO NO!")
+h[:a]
+# => "NO NO NO!" 
+h.fetch(:a)
+# => KeyError: key not found: :a
 
-				// Display a presentation progress bar
-				progress: true,
+h[:a] = "Yeehaw"
+puts h[:a]
+# => "Yeehaw"
 
-				// If true; each slide will be pushed to the browser history
-				history: true,
+h = Hash.new { |hash, key| hash[key] = "#{key} is the key you were looking for"}
+h[:a]
+# => "a is the key you were looking for" 
+h[:level] = 4
+puts h[:level]
+# => 4
 
-				// Flags if mouse wheel navigation should be enabled
-				mouseWheel: true,
+h = {
+      "twitter.com" => true,
+      level: 20
+}
 
-				// Apply a 3D roll to links on hover
-				rollingLinks: true,
+puts h[:twitter.com]
+# => NoMethodError: undefined method `com' for :twitter:Symbol
 
-				// UI style
-				theme: query.theme || 'default', // default/neon
+puts h["twitter.com"]
+# => true
 
-				// Transition style
-				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-			});
+puts h[:level]
+# => 20
 
-			hljs.initHighlightingOnLoad();
-		</script>
+h.each do |key, value|
+  puts "#{key} contains #{value}"
+end
+# => twitter.com contains true
+# => level contains 20
 
-	</body>
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 254, "c" => 300 }
+h1.merge!(h2) 
+# => {"a"=>100, "b"=>254, "c"=>300}
+
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 254, "c" => 300 }
+h1.merge!(h2) { |key, v1, v2| v1 }
+# => {"a"=>100, "b"=>200, "c"=>300}
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <h2>Objects</h2>
+          <section>
+            <img src="assets/images/objects.jpg" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Putting it all together</h2>
+            <h3>...</h3>
+            <h2>...</h2>
+            <h1>...</h1>
+          </section>
+          <section>
+            <h2>Implementing</h2>
+            <h1>TicTacToe</h1>
+            <img src="assets/images/deal_with_it.jpg" />
+          </section>
+        </section>
+        <section>
+          <img src="assets/images/later_bitch.jpg" />
+        </section>
+      </div>
+
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+      
+    </div>
+    
+    <script src="js/reveal.js"></script>
+    <script src="lib/highlight.js"></script>
+    <script>
+      // Parse the query string into a key/value object
+      var query = {};
+      location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+        query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+      } );
+
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // If true; each slide will be pushed to the browser history
+        history: true,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel: true,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks: true,
+
+        // UI style
+        theme: query.theme || 'default', // default/neon
+
+        // Transition style
+        transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+      });
+
+      hljs.initHighlightingOnLoad();
+    </script>
+
+  </body>
 </html>
