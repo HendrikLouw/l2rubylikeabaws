@@ -43,7 +43,7 @@
             <li>Conditionals (1 + 1 == 2) </li>
             <li>Arrays (Hold this list for me)</li>
             <li>Hashes (Fancy list)</li>
-            <li>Objects (stuff, things, etc)</li>
+            <li>Classes</li>
             <li>Putting it all together</li>
           </ul>
         </section>
@@ -158,9 +158,6 @@ end
             </code></pre>
 
           </section>
-
-
-
         </section>
         <section>
           <h2>IRB - Ruby interactive shell</h2>
@@ -268,8 +265,6 @@ name = 'world'
 
 12/5.0
 # => 2.4 
-
-
             </pre></code>
           </section>
           <section>
@@ -532,10 +527,194 @@ h1.merge!(h2) { |key, v1, v2| v1 }
           </section>
         </section>
         <section>
-          <h2>Objects</h2>
           <section>
-            <img src="assets/images/objects.jpg" />
+            <h2>Classes</h2>
+            <img src="assets/images/blueprint.jpg" />
           </section>
+          <section>
+            <h3>Creating a class</h3>
+            <pre><code contenteditable>
+class Company
+  def initialize
+    puts "I am initialized"
+  end
+end
+            </code></pre>
+            <h3>Instance variables</h3>
+            <pre><code contenteditable>
+class Company
+  attr_accessor :name
+  attr_reader :employee_count
+
+  def initialize(name)
+    @name = name
+    @employee_count = 50
+  end
+end
+
+#creating an object
+company = Company.new
+puts company.name
+puts company.employee_count
+            </code></pre>            
+          </section>
+        <section>
+          <h3>Class variables</h3>
+            <pre><code contenteditable>
+class Company 
+  @@visits = 0
+
+  def initialize
+    @visits = 0
+  end
+
+  def self.total_visits
+   @@visits
+  end
+
+  def visit!
+    @@visits += 1
+    @visits += 1
+  end
+
+  def total_visits
+    @visits
+  end
+end
+
+company = Company.new
+company.visit!
+company.visit!
+
+other_company = Company.new
+other_company.visit!
+
+puts "company had #{company.total_visits}"
+# => company had 2
+puts "other_company had #{other_company.total_visits}"
+# => other_company had 1
+puts "total visits for all companies: #{Company.total_visits}"
+# => total visits for all companies: 3
+            </code></pre>            
+
+        </section>
+        <section>
+          <h3>Objects are open</h3>
+            <pre><code contenteditable>
+class Dog
+  def bark
+    puts "bark"
+  end
+end
+
+dog = Dog.new
+dog.bark
+#=> bark
+
+class Dog
+  def whoof
+    puts "whoof whoof"
+  end
+end
+
+dog.whoof
+# => "whoof whoof"
+
+class Dog
+  def bark
+    "meeeoww"
+  end
+end
+
+dog.bark
+# => "meeeoww"
+            </code></pre>            
+        </section>
+        <section>
+          <h3>Inheritance</h3>
+            <pre><code contenteditable>
+class Shape
+  def display
+    puts output_format
+  end
+
+  def output_format
+    "I'm a shape!"
+  end
+end
+
+class Rectangle < Shape
+  attr_accessor :width, :height
+
+  def initialize(width, height)
+    @width = width
+    @height = height
+  end
+
+  def output_format
+    "I'm a #{@width} by #{@height} rectangle"
+  end
+end
+
+class Square < Rectangle
+  def initialize(length)
+    @width = @height = length
+  end
+
+  def output_format
+    "I'm a #{@width} by #{@height} square!"
+  end
+end
+
+class Circle < Shape
+  def initialize(radius)
+    @radius = radius
+  end
+
+  def output_format 
+    "I'm a circle with a radius #{@radius}"
+  end
+end
+            </code></pre>            
+        </section>
+         <section>
+          <h3>Inheritance</h3>
+            <pre><code contenteditable>
+shape = Shape.new
+rectangle = Rectangle.new(4,10)
+square = Square.new(5)
+circle = Circle.new(3)
+
+shape.display
+# => I'm a shape!
+
+rectangle.display
+# => I'm a 4 by 10 rectangle
+
+square.display
+# => I'm a 5 by 5 square!
+
+circle.display
+# => I'm a circle with a radius 3
+            </code></pre>
+          </section>
+
+
+        <section>
+          <h3>Classes are objects!</h3>
+            <pre><code contenteditable>
+Class.superclass
+# => Module 
+Class.superclass.superclass
+# => Object 
+            </code></pre>   
+            <h3>Access control</h3>
+            <ul>
+              <li>Public methods can be called by anyone—there is no access control. Methods are public by default (except for initialize, which is always private).</li>
+              <li>Protected methods can be invoked only by objects of the defining class and its subclasses. Access is kept within the family.</li>
+              <li>Private methods cannot be called with an explicit receiver.</li>
+        </section>
+
         </section>
         <section>
           <section>
@@ -554,6 +733,7 @@ h1.merge!(h2) { |key, v1, v2| v1 }
           <h2>Next up</h2>
           <ul>
             <li>Blocks</li>
+            <li>Modules</li>
             <li>Exceptions</li>
             <li>Testing</li>
             <li>Regular expressions</li>
